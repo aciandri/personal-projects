@@ -1,7 +1,7 @@
 {
     "readme": {
-        "ita": "readme_ita.txt",
-        "eng": "readme_eng.txt"
+        "ita": "readme_page_ita.txt",
+        "eng": "readme_page_eng.txt"
     },
     "text_upload": {
         "ita": "Carica il file da esaminare",
