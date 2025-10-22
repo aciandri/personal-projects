@@ -16,12 +16,12 @@ st.set_page_config(
     page_icon=":panda_face:", # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
     layout="wide"
 )
-st.title("WebApp")
 st.markdown(f"<style>{open('settings/style.css').read()}</style>", unsafe_allow_html=True) 
-st.divider()
 
 def main():
-    st.write('something')
+    dict_texts = utils.AppUI().texts
+
     tab1, tab2 = st.tabs(["Read me", "App"])
+    tab1.markdown(dict_texts, unsafe_allow_html=True)
 
 main()

@@ -1,15 +1,19 @@
 # ----- Libraries -----
 import json
+import os
 
-from log_config import get_logger
+from utils.log_config import get_logger
 
 # ----- Logging -----
 logger = get_logger(__name__)
 
+# ----- Variables -----
+TEXT_PATH = os.path.join(os.path.dirname(__file__), "texts")
+
 # ----- Get JSON files -----
 def load_json(flag_ita: bool, 
               file_json: str,
-              directory: str = "texts/") -> dict:
+              directory: str = f"{TEXT_PATH}/") -> dict:
     """ 
     Carica il file JSON e ne estrae un dizionario.
     Le modalità di conversione dipendono dal file: texts sono le parti testuali della webapp, mentre controls sono i controlli di dataquality da effettuare.
