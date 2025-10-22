@@ -16,8 +16,9 @@ st.set_page_config(
     page_icon=":panda_face:", # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
     layout="wide"
 )
-
+st.title("WebApp")
 st.markdown(f"<style>{open('settings/style.css').read()}</style>", unsafe_allow_html=True) 
+st.divider()
 
 def main():
     st.write('something')
