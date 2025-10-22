@@ -12,6 +12,7 @@ class AppUI:
         self.language = st.session_state.setdefault("language", "Italiano")
         self.texts = self.load_texts()
 
+    @st.cache_data
     def load_texts(self):
         """Load interface texts based on the selected language."""
         return load_json(flag_ita=(self.language == "Italiano"), file_json="texts")
@@ -36,4 +37,3 @@ class AppUI:
             self.language = selected_lang
             st.session_state["language"] = selected_lang
             self.texts = self.load_texts()
-        self.approve_label = "Approva Controllo" if self.language == "Italiano" else "Approve Control"
