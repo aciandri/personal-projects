@@ -1,3 +1,7 @@
+# pyenv activate first_env3.9.9
+# streamlit run app.py --server.port 8501
+# go to: localhost:8501
+
 # ----- Libraries -----
 import streamlit as st
 
