@@ -8,7 +8,7 @@ logger = utils.get_logger(__name__)
 
 # ----- Page configuration -----
 st.set_page_config(
-    page_title="AI Data Quality",
+    page_title="WebApp",
     page_icon=":white_check_mark:", # https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
     layout="wide"
 )
