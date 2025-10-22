@@ -1,0 +1,10 @@
+{
+    "readme": {
+        "ita": "readme_ita.txt",
+        "eng": "readme_eng.txt"
+    },
+    "text_upload": {
+        "ita": "Carica il file da esaminare",
+        "eng": "Upload your file to be examined"
+    }
+}

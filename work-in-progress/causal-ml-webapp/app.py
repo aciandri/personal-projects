@@ -22,5 +22,6 @@ st.divider()
 
 def main():
     st.write('something')
+    tab1, tab2 = st.tabs(["Read me", "App"])
 
 main()

@@ -9,7 +9,7 @@ logger = get_logger(__name__)
 # ----- Get JSON files -----
 def load_json(flag_ita: bool, 
               file_json: str,
-              directory: str = "Texts_&_Controls/") -> dict:
+              directory: str = "texts/") -> dict:
     """ 
     Carica il file JSON e ne estrae un dizionario.
     Le modalità di conversione dipendono dal file: texts sono le parti testuali della webapp, mentre controls sono i controlli di dataquality da effettuare.
