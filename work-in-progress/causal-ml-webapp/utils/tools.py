@@ -14,16 +14,15 @@ TEXT_PATH = os.path.join(os.path.dirname(__file__), "texts")
 def load_json(flag_ita: bool, 
               file_json: str,
               directory: str = f"{TEXT_PATH}/") -> dict:
-    """ 
-    Carica il file JSON e ne estrae un dizionario.
-    Le modalità di conversione dipendono dal file: texts sono le parti testuali della webapp, mentre controls sono i controlli di dataquality da effettuare.
+    """
+    Loads the JSON file and extracts a dictionary.
 
     Args:
-        flag_ita (bool): True se la lingua è impostata a "Italiano".
-        file_json (str): Nome del file json senza estenzione e senza directory.
+    flag_ita (bool): True if the language is set to "Italian".
+    file_json (str): Name of the JSON file without extension and directory.
 
     Returns:
-        Dizionario con i controlli da effettuare o i readme.
+    Dictionary with the checks to be performed or the readme.
     """
 
     try:
