@@ -15,7 +15,15 @@ def main():
     ui_manager_instance = components.UIManager()
     dict_texts = ui_manager_instance.texts
 
-    tab1, tab2 = st.tabs(["Read me", "App"])
-    tab1.write(dict_texts["readme"], unsafe_allow_html=True)
+    readme_tab, setup_tab, results_tab = st.tabs(["Read me", "SetUp Analysis", "Results"])
+    readme_tab.write(dict_texts["readme"], unsafe_allow_html=True)
+
+    with setup_tab:
+        data_manager_instance = components.DataManager()
+        flag_get_data = data_manager_instance.file_upload()
+
+    with results_tab:
+        if not flag_get_data:
+            st.write("No file loaded yet.")
 
 main()

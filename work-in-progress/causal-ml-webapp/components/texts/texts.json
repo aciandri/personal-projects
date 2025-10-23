@@ -6,5 +6,15 @@
     "text_upload": {
         "ita": "Carica il file da esaminare",
         "eng": "Upload your file to be examined"
+    },
+    "opz_selectmode": {
+        "ita": [
+            "File di default",
+            "Carica un file"
+        ],
+        "eng": [
+            "Default file",
+            "Load a file"
+        ]
     }
 }
