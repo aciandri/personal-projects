@@ -2,7 +2,7 @@
 import json
 import os
 
-from utils.log_config import get_logger
+from .log_config import get_logger
 
 # ----- Logging -----
 logger = get_logger(__name__)
@@ -35,13 +35,14 @@ def load_json(flag_ita: bool,
                 key: value[lang] if isinstance(value[lang], str) else tuple(value[lang])
                 for key, value in raw_controls.items()
             }
-            dictionary['readme'] = open(f"{directory}/readme_{lang}.txt").read()
+            dictionary['readme'] = open(f"{directory}/readme_page_{lang}.txt").read()
+            print(f'dizionario : {dictionary}')
+
         else:
             dictionary = {
                 value["label"][lang]: value["description"][lang]
                 for value in raw_controls.values()
             }
-
         return dictionary
     
     except Exception as e:

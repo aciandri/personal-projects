@@ -1,6 +1,8 @@
 import streamlit as st
-from components.utils import load_json
+import os
+from .utils import load_json
 
+BASE_DIR = os.path.join(os.path.dirname(__file__))
 
 class UIManager:
     """Manages the Streamlit web app interface, including layout, language selection, and text loading."""
@@ -8,13 +10,14 @@ class UIManager:
     def __init__(self):
         """Initialize the AppUI with a default or stored language."""
         self.language = st.session_state.setdefault("language", "Italiano")
+        self.texts = self._load_texts()
         self._select_language()
         self._initialize_session()
 
-    @st.cache_data
-    def _load_texts(_self):
+    #@st.cache_data
+    def _load_texts(self):
         """Load interface texts based on the selected language."""
-        return load_json(flag_ita=(_self.language == "Italiano"), file_json="texts")
+        return load_json(flag_ita=(self.language == "Italiano"), file_json="texts")
 
     def _initialize_session(self):
         """Ensure the session state is synchronized with the current language selection."""
@@ -25,7 +28,7 @@ class UIManager:
     def _setup_layout(self):
         """Set up the main page layout with logo and title."""
         col1, col2, col3 = st.columns([1, 7, 1])
-        col1.image("images/image.png", width=100)
+        col1.image(f"{BASE_DIR}/images/image.png", width=100)
         col2.title("WebApp")
         return col3
 

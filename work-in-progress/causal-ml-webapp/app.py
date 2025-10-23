@@ -19,9 +19,10 @@ st.set_page_config(
 st.markdown(f"<style>{open('settings/style.css').read()}</style>", unsafe_allow_html=True) 
 
 def main():
-    dict_texts = components.UIManager().texts
+    ui_manager_instance = components.UIManager()
+    dict_texts = ui_manager_instance.texts
 
     tab1, tab2 = st.tabs(["Read me", "App"])
-    tab1.markdown(dict_texts, unsafe_allow_html=True)
+    tab1.write(dict_texts["readme"], unsafe_allow_html=True)
 
 main()

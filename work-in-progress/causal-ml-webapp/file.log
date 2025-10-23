@@ -3,3 +3,4 @@
 2025-10-22 10:08:13 ERROR Errore nel caricamento del file json texts: [Errno 2] No such file or directory: '/Users/aurora/projects/personal-projects/work-in-progress/causal-ml-webapp/utils/texts//readme_ita.txt'
 2025-10-22 10:11:40 ERROR Errore nel caricamento del file json texts: [Errno 2] No such file or directory: '/Users/aurora/projects/personal-projects/work-in-progress/causal-ml-webapp/utils/texts//readme_ita.txt'
 2025-10-22 14:43:21 ERROR Errore nel caricamento del file json texts: [Errno 2] No such file or directory: '/Users/aurora/projects/personal-projects/work-in-progress/causal-ml-webapp/utils/texts//readme_ita.txt'
+2025-10-23 09:52:56 ERROR Errore nel caricamento del file json texts: [Errno 2] No such file or directory: '/Users/aurora/projects/personal-projects/work-in-progress/causal-ml-webapp/components/texts//readme_ita.txt'
