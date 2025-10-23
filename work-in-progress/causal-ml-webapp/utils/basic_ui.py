@@ -26,7 +26,7 @@ class AppUI:
     def setup_layout(self):
         """Set up the main page layout with logo and title."""
         col1, col2, col3 = st.columns([1, 7, 1])
-        # col1.image("Images/Logo.png", width=100)
+        col1.image("images/image.png", width=100)
         col2.title("WebApp")
         return col3
 
