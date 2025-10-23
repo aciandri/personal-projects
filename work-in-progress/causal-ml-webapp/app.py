@@ -14,12 +14,16 @@ logger = components.get_logger(__name__)
 def main():
     ui_manager_instance = components.UIManager()
     dict_texts = ui_manager_instance.texts
+    flag_ita = st.session_state["language"] == "Italiano"
 
     readme_tab, setup_tab, results_tab = st.tabs(["Read me", "Setup Analysis", "Results"])
     readme_tab.write(dict_texts["readme"], unsafe_allow_html=True)
 
     with setup_tab:
-        data_manager_instance = components.DataManager(dict_texts=dict_texts)
+        data_manager_instance = components.DataManager(
+            dict_texts=dict_texts,
+            flag_ita=flag_ita
+        )
         flag_get_data = data_manager_instance.file_upload()
 
     with results_tab:
