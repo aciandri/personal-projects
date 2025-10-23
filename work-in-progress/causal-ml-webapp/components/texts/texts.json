@@ -10,11 +10,11 @@
     "opz_selectmode": {
         "ita": [
             "File di default",
-            "Carica un file"
+            "Scegli un file"
         ],
         "eng": [
             "Default file",
-            "Load a file"
+            "Choose a file to analyze"
         ]
     }
 }

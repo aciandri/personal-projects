@@ -12,5 +12,3 @@ def get_logger(name: str) -> logging.Logger:
     )
     logger: Final = logging.getLogger(name)
     logger.setLevel(level=logging.WARNING)
-
-    return logger
