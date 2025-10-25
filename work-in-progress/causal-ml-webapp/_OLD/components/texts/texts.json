@@ -1,0 +1,20 @@
+{
+    "readme": {
+        "ita": "readme_page_ita.txt",
+        "eng": "readme_page_eng.txt"
+    },
+    "text_upload": {
+        "ita": "Carica il file da esaminare",
+        "eng": "Upload your file to be examined"
+    },
+    "opz_selectmode": {
+        "ita": [
+            "File di default",
+            "Scegli un file"
+        ],
+        "eng": [
+            "Default file",
+            "Choose a file to analyze"
+        ]
+    }
+}
