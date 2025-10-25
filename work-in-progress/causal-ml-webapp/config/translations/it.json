@@ -1,0 +1,15 @@
+{
+    "welcome": "Benvenuti",
+    "select_file": "Seleziona un file",
+    "pages": {
+        "home": {
+            "title": "Home",
+            "readme": "Readme",
+            "aboutme": "About me"
+        },
+        "analysis": {
+            "title": "Analysis",
+            "select_data": "Select your data"
+        }
+    }
+}

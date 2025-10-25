@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-from .utils import load_json
+from .common import load_json
 
 BASE_DIR = os.path.join(os.path.dirname(__file__))
 
