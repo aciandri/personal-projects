@@ -12,9 +12,10 @@ LANGUAGES = {
 
 class Languages():
     def __init__(self):
-        self.language = self._language_selector()
+        self.language = st.session_state.language
+        self._load_translations()
 
-    def _language_selector(self) -> str:
+    def language_selector(self) -> str:
         """Display language selector in sidebar"""    
         selected = st.sidebar.selectbox(
             "🌐 Language",

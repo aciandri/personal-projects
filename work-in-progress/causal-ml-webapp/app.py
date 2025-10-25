@@ -18,19 +18,21 @@ st.set_page_config(
 )
 
 st.markdown(f"<style>{open('assets/styles/style.css').read()}</style>", unsafe_allow_html=True) 
-
+# st.write(st.session_state)
 lang_instance = utils.Languages()
+lang_instance.language_selector()
+translator = lang_instance.t
 
 # ----- Pages -----
 pages = {
-    lang_instance.t('pages.home.title'): [
-        st.Page("pages/homepage/read_me.py", title=lang_instance.t('pages.home.readme')),
-        st.Page("pages/homepage/about_me.py", title=lang_instance.t('pages.home.aboutme')),
+    translator('pages.home.title'): [
+        st.Page("pages/homepage/read_me.py", title=translator('pages.home.readme')),
+        st.Page("pages/homepage/about_me.py", title=translator('pages.home.aboutme')),
     ],
-    # lang_instance.t('nav.analysis'): [
-    #     st.Page("pages/analysis/select_data.py", title=lang_instance.t('nav.select_data')),
-    #     st.Page("pages/analysis/fine_tuning.py", title=lang_instance.t('nav.fine_tuning')),
-    #     st.Page("pages/analysis/display_results.py", title=lang_instance.t('nav.results')),
+    # translator('nav.analysis'): [
+    #     st.Page("pages/analysis/select_data.py", title=translator('nav.select_data')),
+    #     st.Page("pages/analysis/fine_tuning.py", title=translator('nav.fine_tuning')),
+    #     st.Page("pages/analysis/display_results.py", title=translator('nav.results')),
     # ]
 }
 

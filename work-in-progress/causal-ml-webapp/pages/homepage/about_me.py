@@ -1,8 +1,11 @@
 import streamlit as st
 import utils
 
-# ----- Logging -----
+# ----- Init -----
 logger = utils.get_logger(__name__)
-st.title("Page 2")
+translator = utils.Languages().t
+
+# ----- Page -----
+st.title(translator('home.welcome'))
 
 st.write('prova per pagina 2')
