@@ -18,6 +18,9 @@ st.set_page_config(
 )
 
 st.markdown(f"<style>{open('assets/styles/style.css').read()}</style>", unsafe_allow_html=True) 
+# st.write(st.session_state)
+
+# ----- Languages -----
 lang_instance = utils.Languages()
 lang_instance.language_selector()
 translator = lang_instance.t
@@ -28,11 +31,11 @@ pages = {
         st.Page("pages/homepage/read_me.py", title=translator('pages.home.readme')),
         # st.Page("pages/homepage/about_me.py", title=translator('pages.home.aboutme')),
     ],
-    # translator('nav.analysis'): [
-    #     st.Page("pages/analysis/select_data.py", title=translator('nav.select_data')),
+    translator('pages.analysis.title'): [
+        st.Page("pages/analysis/data_upload.py", title=translator('pages.analysis.select_data')),
     #     st.Page("pages/analysis/fine_tuning.py", title=translator('nav.fine_tuning')),
     #     st.Page("pages/analysis/display_results.py", title=translator('nav.results')),
-    # ]
+    ]
 }
 
 # ----- Webapp -----
