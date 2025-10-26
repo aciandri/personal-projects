@@ -2,6 +2,8 @@ import streamlit as st
 from core import DataLoader
 from config.config import KAGGLE_DATASET, KAGGLE_FILE
 
+dict_uploader_texts = st.session_state.dict_texts["uploader_texts"]
+
 def show_data_upload_page():
     """Pagina UI per upload dati"""
     
@@ -13,22 +15,20 @@ def show_data_upload_page():
     loader = st.session_state.data_loader
     
     # Scelta modalità caricamento
-    use_default = st.checkbox(
-        "Usa dataset Kaggle di default" if flag_ita else "Use default Kaggle dataset"
-    )
+    use_default = st.checkbox(dict_uploader_texts["kaggle_checkbox"])
     
     uploaded_file = None
     if not use_default:
         uploaded_file = st.file_uploader(
-            "Carica file" if flag_ita else "Upload file",
+            dict_uploader_texts["upload_file"],
             type=['csv', 'xlsx']
         )
     else:
         st.info(f"📁 Dataset: {KAGGLE_DATASET}/{KAGGLE_FILE}")
     
     # Bottone caricamento
-    if st.button("Carica dati" if flag_ita else "Load data"):
-        with st.spinner("Caricamento in corso..." if flag_ita else "Loading..."):
+    if st.button(dict_uploader_texts["load_data"]["initial"]):
+        with st.spinner(dict_uploader_texts["load_data"]["loading"]):
             
             # Carica in base alla scelta
             if use_default:
@@ -42,20 +42,14 @@ def show_data_upload_page():
             # Feedback UI
             if success:
                 st.success(
-                    f"✅ Caricati {loader.file_info['rows']} record" 
-                    if flag_ita else 
-                    f"✅ Loaded {loader.file_info['rows']} records"
-                )
+                    dict_uploader_texts["load_data"]["loaded"].replace("/nr_rows", str(loader.file_info['rows']))
+                )   
                 st.dataframe(loader.df.head())
                 
                 # Salva in session state per altre pagine
                 st.session_state.df = loader.df
                 st.session_state.data_loaded = True
             else:
-                st.error(
-                    "❌ Errore durante il caricamento" 
-                    if flag_ita else 
-                    "❌ Error loading data"
-                )
+                st.error(dict_uploader_texts["load_data"]["error"])
 
 show_data_upload_page()

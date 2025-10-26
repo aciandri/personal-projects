@@ -12,5 +12,16 @@
             "title": "Analysis",
             "select_data": "Select your data"
         }
+    },
+    "uploader_texts":{
+        "kaggle_checkbox": "Usa dataset Kaggle di default",
+        "upload_file": "Carica file",
+        "load_data":{
+            "initial": "Carica dati",
+            "loading": "Caricamento in corso...",
+            "select_warning": "Seleziona un file",
+            "loaded": "✅ Caricati /nr_rows record",
+            "error": "❌ Errore durante il caricamento" 
+        }
     }
 }
