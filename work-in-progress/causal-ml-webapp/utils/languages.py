@@ -1,7 +1,6 @@
 import streamlit as st
 import json
-import streamlit as st
-from pathlib import Path
+from common import load_translations
 
 LANGUAGES = {
     'en': 'English',
@@ -31,20 +30,10 @@ class Languages():
         
         return st.session_state.language
 
-    def _load_translations(self) -> dict:
-        """Load translations from JSON file"""
-        file_path = Path(f"config/translations/{self.language}.json")
-        if file_path.exists():
-            with open(file_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        else:
-            st.write(f"Unable to find translation file for language {self.language}")
-        return {}
-
     def t(self, key: str) -> str:
         """Get translation with dot notation support (e.g., 'pages.home.title')"""        
         if 'translations' not in st.session_state or st.session_state.get('trans_lang') != self.language:
-            st.session_state.translations = self._load_translations()
+            st.session_state.translations = load_translations()
             st.session_state.trans_lang = self.language
         
         # Support nested keys like 'pages.home.title'

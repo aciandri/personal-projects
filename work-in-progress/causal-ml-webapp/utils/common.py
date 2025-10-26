@@ -1,4 +1,6 @@
 # ----- Libraries -----
+from pathlib import Path
+import streamlit as st
 import json
 import os
 
@@ -48,3 +50,14 @@ def load_json(flag_ita: bool,
     except Exception as e:
         logger.error(f"Errore nel caricamento del file json {file_json}: {e}")
         return ""
+
+# ----- Translations -----  
+def load_translations(language: str="en") -> dict:
+    """Load translations from JSON file"""
+    file_path = Path(f"config/translations/{language}.json")
+    if file_path.exists():
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    else:
+        st.write(f"Unable to find translation file for language {language}")
+    return {}
