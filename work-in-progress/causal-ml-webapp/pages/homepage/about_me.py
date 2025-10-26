@@ -1,11 +1,10 @@
 import streamlit as st
 import utils
 
-# ----- Init -----
-logger = utils.get_logger(__name__)
-translator = utils.Languages().t
-
 # ----- Page -----
-st.title(translator('home.welcome'))
+st.title(st.session_state.translations["welcome"])
 
-st.write('prova per pagina 2')
+st.markdown(
+    open(f"config/translations/{st.session_state.translations['readme_file']}.txt").read(),
+    unsafe_allow_html=True
+)

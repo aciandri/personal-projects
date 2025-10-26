@@ -18,7 +18,6 @@ st.set_page_config(
 )
 
 st.markdown(f"<style>{open('assets/styles/style.css').read()}</style>", unsafe_allow_html=True) 
-# st.write(st.session_state)
 lang_instance = utils.Languages()
 lang_instance.language_selector()
 translator = lang_instance.t
@@ -27,7 +26,7 @@ translator = lang_instance.t
 pages = {
     translator('pages.home.title'): [
         st.Page("pages/homepage/read_me.py", title=translator('pages.home.readme')),
-        st.Page("pages/homepage/about_me.py", title=translator('pages.home.aboutme')),
+        # st.Page("pages/homepage/about_me.py", title=translator('pages.home.aboutme')),
     ],
     # translator('nav.analysis'): [
     #     st.Page("pages/analysis/select_data.py", title=translator('nav.select_data')),
