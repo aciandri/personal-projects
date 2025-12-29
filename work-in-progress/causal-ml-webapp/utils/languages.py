@@ -1,6 +1,5 @@
 import streamlit as st
-import json
-from common import load_translations
+from .common import load_translations
 
 LANGUAGES = {
     'en': 'English',
@@ -12,7 +11,6 @@ LANGUAGES = {
 class Languages():
     def __init__(self):
         self.language = st.session_state.language
-        self._load_translations()
 
     def language_selector(self) -> str:
         """Display language selector in sidebar"""    

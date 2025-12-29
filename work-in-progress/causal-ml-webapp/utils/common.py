@@ -20,11 +20,11 @@ def load_json(flag_ita: bool,
     Loads the JSON file and extracts a dictionary.
 
     Args:
-    flag_ita (bool): True if the language is set to "Italian".
-    file_json (str): Name of the JSON file without extension and directory.
+        flag_ita (bool): True if the language is set to "Italian".
+        file_json (str): Name of the JSON file without extension and directory.
 
     Returns:
-    Dictionary with the checks to be performed or the readme.
+        Dictionary with the checks to be performed or the readme.
     """
 
     try:
@@ -38,7 +38,7 @@ def load_json(flag_ita: bool,
                 for key, value in raw_controls.items()
             }
             dictionary['readme'] = open(f"{directory}/readme_page_{lang}.txt").read()
-            print(f'dizionario : {dictionary}')
+            logger.info(f'dizionario : {dictionary}')
 
         else:
             dictionary = {

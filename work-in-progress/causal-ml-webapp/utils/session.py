@@ -1,5 +1,5 @@
 import streamlit as st
-from common import load_translations
+from .common import load_translations
 
 def init_session_state():
     if 'language' not in st.session_state:

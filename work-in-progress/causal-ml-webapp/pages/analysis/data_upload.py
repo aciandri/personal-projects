@@ -2,7 +2,7 @@ import streamlit as st
 from core import DataLoader
 from config.config import KAGGLE_DATASET, KAGGLE_FILE
 
-dict_uploader_texts = st.session_state.dict_texts["uploader_texts"]
+dict_uploader_texts = st.session_state.translations["uploader_texts"]
 
 def show_data_upload_page():
     """Pagina UI per upload dati"""
