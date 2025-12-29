@@ -10,7 +10,7 @@ class UIManager:
 
     def __init__(self):
         """Initialize the AppUI with a default or stored language."""
-        self.language = st.session_state.setdefault("language", "Italiano")
+        self.language = st.session_state.setdefault("language", "ita")
         self.texts = self._load_texts()
         self._initialize_session()
         self._setup_layout()
@@ -18,7 +18,7 @@ class UIManager:
     #@st.cache_data
     def _load_texts(self):
         """Load interface texts based on the selected language."""
-        return load_json(flag_ita=(self.language == "Italiano"), file_json="texts")
+        return load_json(flag_ita=(self.language == "ita"), file_json="texts")
 
     def _initialize_session(self):
         """Ensure the session state is synchronized with the current language selection."""

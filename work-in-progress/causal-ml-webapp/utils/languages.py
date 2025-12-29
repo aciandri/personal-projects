@@ -30,8 +30,8 @@ class Languages():
 
     def t(self, key: str) -> str:
         """Get translation with dot notation support (e.g., 'pages.home.title')"""        
-        if 'translations' not in st.session_state or st.session_state.get('trans_lang') != self.language:
-            st.session_state.translations = load_translations()
+        if st.session_state.get('translations', '') != self.language:
+            st.session_state.translations = load_translations(self.language)
             st.session_state.trans_lang = self.language
         
         # Support nested keys like 'pages.home.title'
