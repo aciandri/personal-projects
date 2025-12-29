@@ -29,7 +29,6 @@ translator = lang_instance.t
 pages = {
     translator('pages.home.title'): [
         st.Page("pages/homepage/read_me.py", title=translator('pages.home.readme')),
-        # st.Page("pages/homepage/about_me.py", title=translator('pages.home.aboutme')),
     ],
     translator('pages.analysis.title'): [
         st.Page("pages/analysis/data_upload.py", title=translator('pages.analysis.select_data')),

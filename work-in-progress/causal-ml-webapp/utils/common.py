@@ -52,7 +52,7 @@ def load_json(flag_ita: bool,
         return ""
 
 # ----- Translations -----  
-def load_translations(language: str="en") -> dict:
+def load_translations(language: str = "en") -> dict:
     """Load translations from JSON file"""
     file_path = Path(f"config/translations/{language}.json")
     if file_path.exists():

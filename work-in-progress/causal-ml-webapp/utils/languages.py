@@ -4,8 +4,6 @@ from .common import load_translations
 LANGUAGES = {
     'en': 'English',
     'it': 'Italiano',
-    # 'es': 'Español',
-    # 'fr': 'Français',
 }
 
 class Languages():
@@ -13,7 +11,9 @@ class Languages():
         self.language = st.session_state.language
 
     def language_selector(self) -> str:
-        """Display language selector in sidebar"""    
+        """
+        Display language selector in sidebar
+        """    
         selected = st.sidebar.selectbox(
             "🌐 Language",
             options=list(LANGUAGES.keys()),
